@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="num">
+    <input type="button" value="点我" @click="incr">
+    <h1>大家好，我是{{name}}，有{{num}}个粉丝</h1>
+</div>
+</body>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            name: "刘德华",
+            num: 100
+        },
+        methods: {
+            incr(){
+                this.num++;
+            }
+        },
+        created(){
+            this.num = 101;
+        }
+    })
+</script>
+</html>
